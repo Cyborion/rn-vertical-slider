@@ -123,9 +123,9 @@ export default class VerticalSlider extends Component<Props, State> {
     const sliderHeight = this._getSliderHeight(value);
     let ballPosition = sliderHeight;
     const ballHeight = ballIndicatorWidth ? ballIndicatorWidth : 48;
-    if (ballPosition + ballHeight/2 >= height) {
+    if (ballPosition >= height) {
       ballPosition = height - ballHeight;
-    } else if (ballPosition - ballHeight/2 <= 0) {
+    } else if (ballPosition <= 0) {
       ballPosition = 0;
     } else {
       ballPosition = ballPosition - ballHeight / 2;
