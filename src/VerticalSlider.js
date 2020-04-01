@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
     elevation: 3
   },
   ball: {
+    pointerEvents: 'none',
     position: "absolute",
     alignItems: "center",
     justifyContent: "center"
