@@ -197,8 +197,10 @@ export default class VerticalSlider extends Component<Props, State> {
           />
         </View>
         {this.props.showBallIndicator ? (
+        <View
+          pointerEvents: none,
+        >
           <Animated.View
-            pointerEvents: none,
             style={[
               styles.ball,
               styles.shadow,
@@ -227,6 +229,7 @@ export default class VerticalSlider extends Component<Props, State> {
               {Math.round(value * 100) / 100}
             </Text>
           </Animated.View>
+      </View>
         ) : null}
       </View>
     );
