@@ -23,6 +23,7 @@ type Props = {
   width: number,
   height: number,
   borderRadius: number,
+  marginBottom: number,
   maximumTrackTintColor: string,
   minimumTrackTintColor: string,
   showBallIndicator: boolean,
@@ -123,13 +124,7 @@ export default class VerticalSlider extends Component<Props, State> {
     const sliderHeight = this._getSliderHeight(value);
     let ballPosition = sliderHeight;
     const ballHeight = ballIndicatorWidth ? ballIndicatorWidth : 48;
-    if (ballPosition >= height) {
-      ballPosition = height - ballHeight;
-    } else if (ballPosition <= 0) {
-      ballPosition = 0;
-    } else {
-      ballPosition = ballPosition - ballHeight / 2;
-    }
+    ballPosition = ballPosition - ballHeight / 2;
     Animated.parallel([
       Animated.timing(this.state.sliderHeight, {
         toValue: sliderHeight,
@@ -156,6 +151,7 @@ export default class VerticalSlider extends Component<Props, State> {
     const {
       width,
       height,
+      marginBottom,
       borderRadius,
       maximumTrackTintColor,
       minimumTrackTintColor,
@@ -167,7 +163,7 @@ export default class VerticalSlider extends Component<Props, State> {
     } = this.props;
     const { value } = this.state;
     return (
-      <View style={[{ height, width, borderRadius }]}>
+      <View style={[{ height, width, borderRadius, marginBottom}]}>
         <View
           style={[
             styles.container,
