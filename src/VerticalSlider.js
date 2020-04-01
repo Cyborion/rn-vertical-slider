@@ -198,6 +198,7 @@ export default class VerticalSlider extends Component<Props, State> {
         </View>
         {this.props.showBallIndicator ? (
           <Animated.View
+            pointerEvents: 'none',
             style={[
               styles.ball,
               styles.shadow,
@@ -244,7 +245,6 @@ const styles = StyleSheet.create({
     elevation: 3
   },
   ball: {
-    pointerEvents: 'none',
     position: "absolute",
     alignItems: "center",
     justifyContent: "center"
