@@ -198,7 +198,7 @@ export default class VerticalSlider extends Component<Props, State> {
             </Text>
           </Animated.View>
       </View>
-        ) : null}
+        ) : 
         <View
           style={[
             styles.container,
@@ -226,7 +226,7 @@ export default class VerticalSlider extends Component<Props, State> {
               }
             ]}
           />
-        </View>
+        </View>}
       </View>
     );
   }
