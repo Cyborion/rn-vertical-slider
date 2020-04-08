@@ -163,7 +163,7 @@ export default class VerticalSlider extends Component<Props, State> {
     } = this.props;
     const { value } = this.state;
     return (
-      <View style={[{ height, width, borderRadius, marginBottom}]}
+      <View style={[{ height, width, borderRadius, marginBottom}]}>
         {this.props.showBallIndicator ? (
         <View
           pointerEvents= 'none'
@@ -198,7 +198,7 @@ export default class VerticalSlider extends Component<Props, State> {
             </Text>
           </Animated.View>
       </View>
-        ) : 
+        ) : null}
         <View
           style={[
             styles.container,
@@ -226,7 +226,7 @@ export default class VerticalSlider extends Component<Props, State> {
               }
             ]}
           />
-        </View>}
+        </View>
       </View>
     );
   }
