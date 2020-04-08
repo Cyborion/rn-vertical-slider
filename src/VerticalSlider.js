@@ -194,7 +194,7 @@ export default class VerticalSlider extends Component<Props, State> {
         </View>
         {this.props.showBallIndicator ? (
         <View
-            
+            pointerEvents= 'none'
         >
           <Animated.View
             style={[
