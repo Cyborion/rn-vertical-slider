@@ -163,10 +163,38 @@ export default class VerticalSlider extends Component<Props, State> {
     } = this.props;
     const { value } = this.state;
     return (
-      <View style={[{ height, width, borderRadius, marginBottom}]}>
+      <View style={[{ height, width, borderRadius }]}>
+        <View
+          style={[
+            styles.container,
+            styles.shadow,
+            {
+              height,
+              width,
+              borderRadius,
+              backgroundColor: maximumTrackTintColor
+                ? maximumTrackTintColor
+                : "#ECECEC"
+            }
+          ]}
+          {...this.state.panResponder.panHandlers}
+        >
+          <Animated.View
+            style={[
+              styles.slider,
+              {
+                height: this.state.sliderHeight,
+                width,
+                backgroundColor: minimumTrackTintColor
+                  ? minimumTrackTintColor
+                  : "#ECECEC"
+              }
+            ]}
+          />
+        </View>
         {this.props.showBallIndicator ? (
         <View
-          pointerEvents= 'none'
+            pointerEvents= 'none'
         >
           <Animated.View
             style={[
@@ -197,36 +225,8 @@ export default class VerticalSlider extends Component<Props, State> {
               {Math.round(value * 100) / 100}
             </Text>
           </Animated.View>
-      </View>
-        ) : null}
-        <View
-          style={[
-            styles.container,
-            styles.shadow,
-            {
-              height,
-              width,
-              borderRadius,
-              backgroundColor: maximumTrackTintColor
-                ? maximumTrackTintColor
-                : "#ECECEC"
-            }
-          ]}
-          {...this.state.panResponder.panHandlers}
-        >
-          <Animated.View
-            style={[
-              styles.slider,
-              {
-                height: this.state.sliderHeight,
-                width,
-                backgroundColor: minimumTrackTintColor
-                  ? minimumTrackTintColor
-                  : "#ECECEC"
-              }
-            ]}
-          />
         </View>
+        ) : null}
       </View>
     );
   }
